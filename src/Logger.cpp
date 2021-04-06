@@ -30,10 +30,10 @@ Logger::Logger(LOG_TYPE lt, std::string fn){
 void Logger::Log(std::string info){
 	lock_guard<mutex> lock(mtx);
 	if(lt == LOG_FILE){
-		fs<<info;
+		fs<<info<<endl;
 	}
 	else{
-		cout<<info;
+		cout<<info<<endl;
 	}
 }
 
